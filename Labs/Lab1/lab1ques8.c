@@ -12,7 +12,7 @@ int main(void) {
     printf("Please enter an integer: ");
     scanf("%ld",&input);
 
-    while (i!=0) {
+    while (i!=0) {  //count how many numbers are in the input
         i = input/n;
         numOfZeroes++;
         n*=10;
@@ -22,14 +22,14 @@ int main(void) {
     //printf("%d\n%d",numOfZeroes,n);
 
     for (int x=1;x<numOfZeroes+1;x++) {
-        single = input/n;
+        single = input/n; //integer division to get the value of the leading integer
         //printf("%d\n",single);
-        newNum += (single*secondN);
-        input %= n;
+        newNum += (single*secondN); //add leading integer and its magnitude to the new number
+        input %= n;  //strip the first integer
         secondN *= 10;
         n /= 10;
     }
-    printf("%ld",newNum);
+    printf("The flipped number is %ld",newNum);
 
     return 0;
 }

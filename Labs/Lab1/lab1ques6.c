@@ -3,16 +3,15 @@
 //400175089
 
 #include <stdio.h>
-#include <math.h>
 
 int main(void) {
 
-    int hi,counter = 0;
+    int counter = 0;
     for (int side1=1;side1<401;side1++) {
         for (int side2=1;side2<401;side2++) {
             for (int side3=1;side3<401;side3++) {
-                float hypotenuse = sqrt(pow(side1,2)+pow(side2,2));
-                if (hypotenuse==(float)side3) {printf("%d %d %d\n",side1,side2,side3);counter++;}
+                float hypotenuse = (side1*side1)+(side2*side2); //c^2 = a^2+b^2
+                if (hypotenuse==(float)side3*side3) {printf("%d %d %d\n",side1,side2,side3);counter++;} //cast side3 to float to compare
             }
         }
     }

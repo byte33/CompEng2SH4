@@ -12,14 +12,14 @@ int main(void) {
         do {
             printf("Input an integer: ");
             scanf("%d",&input);
-        } while (input < 0);
+        } while (input < 0);  //make sure that the input is greater than 0
 
-        if (i==0) {smallestNum = input;}
+        if (i==0) {smallestNum = input;}  //on first iteration, set smallestNum = input
         if (input < smallestNum) {
-            smallestNum = input;
+            smallestNum = input; //if input is less than the smallestNum, set smallestNum as input
         }
     }
     
-    printf("%d",smallestNum);
+    printf("The smallest number is %d",smallestNum);
     return 0;
 }
