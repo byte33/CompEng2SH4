@@ -8,7 +8,13 @@ int main(void) {
 
     int input = 0;
     int smallestNum;
-    for (int i=0;i<5;i++) {
+    int n;
+    do {
+        printf("How many times do you want to loop? ");
+        scanf("%d",&n);
+    } while(input < 0);
+
+    for (int i=0;i<n;i++) {
         do {
             printf("Input an integer: ");
             scanf("%d",&input);
