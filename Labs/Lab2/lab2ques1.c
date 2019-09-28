@@ -1,3 +1,7 @@
+//Matteo Tullo
+//tullom
+//400175089
+
 #include <stdio.h>
 #include <math.h>
 #define N 3
