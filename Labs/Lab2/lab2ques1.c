@@ -6,7 +6,7 @@
 #include <math.h>
 #define N 3
 
-void printVector(double array[], int size);
+void printVector(double array[], int size);     //Function Prototypes
 void addVectors(double vector1[], double vector2[], double vector3[], int n);
 double scalarProd(double vector1[], double vector2[], int n);
 double norm2(double vector[], int n);
@@ -35,7 +35,7 @@ int main(void)
 
 void printVector(double array[], int size)
 {
-    for (int i=0;i<size;i++) {
+    for (int i=0;i<size;i++) {  //cycles thru indicies of vector
         printf(" Component %d = %f,",(i+1),array[i]);
     }
     printf("\n");
@@ -44,8 +44,8 @@ void printVector(double array[], int size)
 void addVectors(double vector1[], double vector2[], double vector3[], int n)
 {
     printf("Adding 2 vectors...\n");
-    for (int i=0;i<n;i++) {
-        vector3[i] = vector1[i] + vector2[i];
+    for (int i=0;i<n;i++) {  //cycles thru indicies of vector
+        vector3[i] = vector1[i] + vector2[i]; //add the value at certain indicies and append them to vector3
     }
     printVector(vector3,n);
 }
@@ -55,12 +55,12 @@ double scalarProd(double vector1[], double vector2[], int n)
     double sum = 0.0;
 
     for (int i=0;i<n;i++) {
-        sum += (vector1[i]*vector2[i]);
+        sum += (vector1[i]*vector2[i]);  //sum the product of the different indicies of the two vectors
     }
     return sum;
 }
 
 double norm2(double vector[], int n)
 {
-    return sqrt(scalarProd(vector,vector,n));
+    return sqrt(scalarProd(vector,vector,n));  //take the sqrt of the dot product
 }

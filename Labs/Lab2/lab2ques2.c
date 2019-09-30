@@ -27,14 +27,14 @@ int isDiagDom(int mat[][N])
     int sum;
     int val;
     for (int i=0;i<N;i++) {
-        sum = 0;
-        diag = (int)fabs(mat[i][i]);
+        sum = 0; //set sum = 0 for every loop
+        diag = (int)fabs(mat[i][i]); //get the diagonal value for the current row
         for (int j=0;j<N;j++) {
-            if (!(i==j)) {sum+=mat[i][j];}
+            if (!(i==j)) {sum+=mat[i][j];}  //add all the values other than the diagonal
         }
         sum = (int)fabs(sum);
-        if (diag<=sum) {break;}
+        if (diag<=sum) {break;} //if diag is less than the sum, it is not diag dom so break out of loop
     }
-    val = (diag<=sum? 0 : 1);
+    val = (diag<=sum? 0 : 1); //if diag is less than sum, return 0 b/c its not diag dom
     return val;
 }

@@ -1,6 +1,3 @@
-//Matteo Tullo
-//tullom
-//400175089
 #include <stdio.h>
 #define N 10
 
@@ -13,6 +10,7 @@ void transpose(double mat[][N])
             num[x][i] = mat[i][x];
         }
     }
+
         for (int y=0;y<N;y++) {
             for (int z=0;z<N;z++) {
                 mat[y][z] = num[y][z];
