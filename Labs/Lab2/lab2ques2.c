@@ -13,9 +13,10 @@ int main(void)
     int x[][N] = {{4,2,1},{2,8,3},{6,3,10}};
     int val = 0;
     val = isDiagDom(x);
-    printf("%d",val);
+    if (val) {printf("The matrix is diagonally dominant");}
+    else {printf("The matrix is not diagonally dominant");}
 
-    return 1;
+    return 0;
 }
 
 

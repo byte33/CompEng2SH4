@@ -23,8 +23,8 @@ int main(void)
     
     printVector(vect1,dim);
     addVectors(vect1,vect2,vect3,dim);
-    printf("%f\n",scalarProd(vect1,vect2,dim));
-    printf("%f\n",norm2(vect1,dim));
+    printf("Scalar product is %f\n",scalarProd(vect1,vect2,dim));
+    printf("Norm2 is %f\n",norm2(vect1,dim));
 
     return 0;
 }
