@@ -16,9 +16,9 @@ int main(void)
     // double vect1[N] = {3.4124,5.4231,1.2674};
     // double vect2[N] = {5.1432,4.4213,6.4245};
     // double vect3[N] = {10.4222,5.9678,5.1554};
-    double vect1[N] = {2,4,6};
-    double vect2[N] = {0,1,2};
-    double vect3[N] = {10.4222,5.9678,5.1554};
+    double vect1[N] = {0,1,2};
+    double vect2[N] = {2,4,6};
+    double vect3[N];
     int dim = N;
     
     printVector(vect1,dim);

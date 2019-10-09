@@ -8,8 +8,8 @@ void stringCopy(const char source[], char destination[], int n);
 
 int main(void)
 {
-    const char source[] = "Hello4hdfjsknkea";
-    int n = 6;
+    const char source[] = "Hello";
+    int n = 2;
     char destination[n];
 
     stringCopy(source,destination,n);

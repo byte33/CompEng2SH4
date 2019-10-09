@@ -10,7 +10,8 @@ int isDiagDom(int mat[][N]);
 
 int main(void)
 {
-    int x[][N] = {{4,2,1},{2,8,3},{6,3,10}};
+    //int x[][N] = {{4,2,1},{2,8,3},{6,3,10}};
+    int x[][N] = {5,3,2,5,8,1,2,4,7};
     int val = 0;
     val = isDiagDom(x);
     if (val) {printf("The matrix is diagonally dominant");}

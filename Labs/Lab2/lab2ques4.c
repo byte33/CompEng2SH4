@@ -9,7 +9,7 @@ void letterFreq(const char word[],int freq[]);
 int main(void)
 {
     int freq[25];
-    const char word[] = "abcdefghijklmnopqrstuvwxyz";
+    const char word[] = "AbZ";
 
     letterFreq(word,freq);
 

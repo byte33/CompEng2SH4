@@ -10,10 +10,10 @@ void reconstruct( int source[], int m, const int val[], const int pos[], int n);
 
 int main(void)
 {
-    int source[]={0,0,23,0,-7,0,0,48};
-    int val[K]={23,-7,48};
-    int pos[K]={2,4,7};
-    int size=8;
+    int source[]={0,2,5,0,7,0};
+    int val[K]={2,3,5};
+    int pos[K]={0,2,4};
+    int size=6;
 
     efficient(source,val,pos,size);
     reconstruct(source,size,val,pos,K);

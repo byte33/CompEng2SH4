@@ -3,17 +3,13 @@
 //400175089
 
 #include <stdio.h>
-#define N 5
+#define N 3
 
 void diagScan(int mat[][N]);
 
 int main(void)
 {
-    int x[][N] = {{1,12,13,49,8},
-                  {5,16,17,81,6},
-                  {9,10,11,20,0},
-                  {2,45,19,14,7},
-                  {1,12,13,49,1}};
+    int x[][N] = {5,3,2,5,8,1,2,4,7};
     diagScan(x);
 
     return 0;
@@ -34,4 +30,5 @@ void diagScan(int mat[][N])
             temp--; //we want the row above so decrement.
         }
     }
+
 }
