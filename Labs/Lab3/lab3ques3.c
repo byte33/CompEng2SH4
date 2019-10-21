@@ -8,6 +8,7 @@
 
 char **read_words(const char *input_filename, int *nPtr);
 char **sort_words(char **list, int *nPtr);
+void output_words(char **list,int *nPtr);
 
 int main(void)
 {
@@ -20,8 +21,9 @@ int main(void)
 
     list = read_words(filename,nPtr);
     list = sort_words(list,nPtr);
-    printf("%s\n",list[0]);
+    // printf("%s\n",list[0]);
     // printf("%d",*nPtr);
+    output_words(list,nPtr);
 
     return 0;
 }
@@ -67,4 +69,11 @@ char **sort_words(char **list, int *nPtr)
         list[j+1] = temp; 
     } 
     return list;
+}
+
+void output_words(char **list,int *nPtr)
+{
+    for (int i=0;i<*nPtr;i++) {
+        printf("%s\n",list[i]);
+    }
 }
