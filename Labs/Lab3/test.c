@@ -24,11 +24,11 @@ void print_list(Student **list, int size);
 void withdraw(int idNo, Student **list, int *sizePtr);
 void destroy_list(Student **list, int *sizePtr);
 
-Student *now;
+// Student *now;
 
 int main(void) 
 {
-    now = calloc(3,sizeof(Student));
+    // now = calloc(5,sizeof(Student));
     char filename[13] = "students.txt";
     char filename2 [11] = "grades.txt";
     int siz;
@@ -37,25 +37,7 @@ int main(void)
     int *size = &siz;
 
 
-    FILE *input_file = fopen(filename,"r");
-
-    fscanf(input_file,"%d",size);
-    // printf("%d",*sizePtr);
-    // printf("%d",sizePtr);
-    // printf("%d",(((int)sizePtr) * (sizeof(Student *))));
-    Student **classList = calloc((*size),(sizeof(Student *)));
-
-    for (int i=0;i<(*size);i++) {
-        fscanf(input_file,"%d",&now[i].id);
-        fscanf(input_file,"%s",now[i].firstName);
-        fscanf(input_file,"%s",now[i].lastName);
-        // printf("%d %s %s",now[i].id,now[i].firstName,now[i].lastName);
-        // now[i].id = idN;
-        classList[i] = &now[i];
-    }
-        // printf("%d", classList[1]->id);
-
-    fclose(input_file);
+    Student **classList = create_class_list(filenameP,size); 
     // printf("\n%d", classList[0]->id);
     // printf("\n%s", classList[0]->firstName);
     // printf("\n%s", classList[0]->lastName);
@@ -71,10 +53,10 @@ int main(void)
     // printf("\n%f", classList[2]->finalGrade);
 
     output_final_course_grades(classList, *size);
+    // print_list(classList, *size);   
 
+    withdraw(4004, classList, size);
     print_list(classList, *size);
-
-    withdraw(4002, classList, size);
 
     destroy_list(classList,size);
 
@@ -91,14 +73,15 @@ Student **create_class_list(char *filename, int *sizePtr)
     // printf("%d",sizePtr);
     // printf("%d",(((int)sizePtr) * (sizeof(Student *))));
     Student **classList = calloc((*sizePtr),(sizeof(Student *)));
+    for (int i=0;i<(*sizePtr);i++) {classList[i] = calloc(1,sizeof(Student));}
 
     for (int i=0;i<(*sizePtr);i++) {
-        fscanf(input_file,"%d",&now[i].id);
-        fscanf(input_file,"%s",now[i].firstName);
-        fscanf(input_file,"%s",now[i].lastName);
+        fscanf(input_file,"%d",&classList[i]->id);
+        fscanf(input_file,"%s",classList[i]->firstName);
+        fscanf(input_file,"%s",classList[i]->lastName);
         // printf("%d %s %s",now[i].id,now[i].firstName,now[i].lastName);
         // now[i].id = idN;
-        classList[i] = &now[i];
+        // classList[i] = &now[i];
     }
         // printf("%d", classList[1]->id);
 
@@ -164,13 +147,17 @@ void print_list(Student **list, int size)
 void withdraw(int idNo, Student **list, int *sizePtr) 
 {
 
-    printf("dhjasdjada");
+    // printf("dhjasdjada");
     int index = find(idNo,list,*sizePtr);
-    free(list[0]);
+    free(list[index]);
+    if (index==-1) {printf("Invalid Entry\n");return;}
+    // printf("%dddasdada",list[index]->id);
     for (int i=index; i<(*sizePtr-1);i++) {
         list[i] = list[i+1];
     }
     
+    
+    *sizePtr=*sizePtr-1;
     // printf("%s",list[0]->firstName);
 }
 
