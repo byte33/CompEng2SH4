@@ -36,8 +36,8 @@ int main(void)
 
     Student **classList = create_class_list(filenameP,size);
 
-    int f = find(4001,classList,*size);
-    // f < 0 ? printf("Number was not found\n") : printf("Number was found at index %d\n",f);
+    int f = find(4005,classList,*size);
+    //f < 0 ? printf("Number was not found\n") : printf("Number was found at index %d\n",f);
 
     input_grades(filenameP2, classList, *size);
     // printf("\n%d", classList[1]->proj2Grade);
@@ -48,8 +48,8 @@ int main(void)
     output_final_course_grades(classList, *size);
     // print_list(classList, *size);   
 
-    withdraw(4001, classList, size);
-    // print_list(classList, *size);
+    withdraw(4004, classList, size);
+    //print_list(classList, *size);
 
     destroy_list(classList,size);
     // print_list(classList, *size);

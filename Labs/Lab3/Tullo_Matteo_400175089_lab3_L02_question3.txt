@@ -21,7 +21,7 @@ int main(void)
     // printf("%d\n",(sizeof(char)));
 
     list = read_words(filename,nPtr);
-    list = sort_words2(list,nPtr);
+    list = sort_words(list,nPtr);
     // printf("%s\n",list[0]);
     // printf("%d",*nPtr);
     output_words(list,nPtr);
