@@ -1,4 +1,4 @@
-protected class quiz4{
+public class quiz4{
     public static void main(String[] args) {
         int myArray[][];
         myArray = new int[10][];
